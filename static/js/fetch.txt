@@ -1,0 +1,15 @@
+	const payload = {
+	month : dates[0],
+	day : dates[1],
+	title : String(inpt.value)
+	};
+	fetch("http://localhost/addevents.php", {
+	method : 'POST',
+	headers : {"Content-Type" : "application/json"},
+	body : JSON.stringify(payload)
+	})
+	.then(res => res.json())
+	.then(data => {calendarObject=data;
+		console.log('0 : ',data);
+	})
+	.catch(err => console.error ( "خطا", err ));
